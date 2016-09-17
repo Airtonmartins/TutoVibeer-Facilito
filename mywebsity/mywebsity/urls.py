@@ -17,9 +17,10 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.contrib.auth.views import login
 
+
 urlpatterns = [
     #url(r'^music/')
     url(r'^admin/', admin.site.urls),
-    url(r'^music/', include('music.urls')),
-    url(r'^$', login ,{'template_name':'music/login.html'}, name='login')
+    url(r'^', include('music.urls')),
+    url(r'^accounts/login/', login ,{'template_name':'music/login.html'}, name='login')
 ]
